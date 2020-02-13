@@ -14,4 +14,19 @@ const play = hand => {
     : (opponent = "scissors");
   //Update the opponent div so it shows opponent hand
   document.querySelector(`#${opponent}`).classList.remove("hidden");
+
+  //display the outcome in the outcome div
+  let message = "";
+  if (hand == opponent) {
+    message = "it is tie";
+  } else if (
+    (hand == "paper" && opponent == "scissors") ||
+    (hand == "rock" && opponent == "paper") ||
+    (hand == "scissors" && opponent == "rock")
+  ) {
+    message = "You lose :(";
+  } else {
+    message = "You win! :)";
+  }
+  document.querySelector("#outcome").innerHTML = message;
 };

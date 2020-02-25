@@ -6,6 +6,9 @@ let tieFace =
   "<img src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/face-with-one-eyebrow-raised_1f928.png' width='45' height='45'>";
 let loseFace =
   "<img src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/face-screaming-in-fear_1f631.png' width='45' height='45'>";
+let hands = Array.prototype.slice
+  .call(document.querySelectorAll("#opponent div"))
+  .map(e => e.getAttribute("id"));
 
 const play = hand => {
   //when played, clear up the screen
@@ -26,13 +29,15 @@ const opponentHand = () => {
 
 //Check it I won or lost
 const getScore = (myHand, opponentHand) => {
+  // let hands = ["rock", "paper", "scissors"];
   return myHand == opponentHand
     ? 0
-    : (myHand == "paper" && opponentHand == "scissors") ||
-      (myHand == "rock" && opponentHand == "paper") ||
-      (myHand == "scissors" && opponentHand == "rock")
-    ? -1
-    : 1;
+    : (hands.indexOf(myHand) > 0 &&
+        hands.indexOf(myHand) - hands.indexOf(opponentHand) == 1) ||
+      (hands.indexOf(myHand) == 0 &&
+        hands.indexOf(opponentHand) == hands.length - 1)
+    ? 1
+    : -1;
 };
 
 //reset score once the user choose to end the game

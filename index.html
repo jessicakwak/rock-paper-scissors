@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700&display=swap"
+      rel="stylesheet"
+    />
     <script type="text/javascript" src="script.js" defer></script>
   </head>
   <body>
@@ -17,6 +21,24 @@
       <button id="rock" class="option" onclick="play('rock')"></button>
       <button id="paper" class="option" onclick="play('paper')"></button>
       <button id="scissors" class="option" onclick="play('scissors')"></button>
+    </div>
+    <div id="score-container">
+      <p class="finalOutcome"></p>
+      <p class="start">Choose a hand to play</p>
+      <div class="grid">
+        <div id="myScore"></div>
+        <div class="vs hidden">
+          <p>
+            VS
+          </p>
+        </div>
+        <div id="yourScore"></div>
+      </div>
+    </div>
+    <div id="Reset">
+      <button type="button" name="button" onclick="resetScore()">
+        End game
+      </button>
     </div>
   </body>
 </html>

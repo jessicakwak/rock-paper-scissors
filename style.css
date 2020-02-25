@@ -3,6 +3,7 @@ body {
   text-align: center;
   margin: 0;
   padding-top: 50px;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 #opponent {
@@ -13,14 +14,14 @@ body {
   border: 3px solid black;
   padding: 34px 0;
   width: 300px;
-  height: 200px;
+  height: 150px;
   margin: 0 auto;
   box-sizing: border-box;
   font-size: 50px;
-  font-family: Impact, Arial, sans-serif;
 }
 
-#player {
+#player,
+.grid {
   width: 426px;
   margin: 30px auto;
   display: grid;
@@ -46,7 +47,7 @@ body {
   background-position: center 10px;
 }
 
-.option.hidden {
+.hidden {
   display: none;
 }
 
@@ -60,4 +61,29 @@ body {
 
 #scissors {
   background-image: url("images/scissors.png");
+}
+
+.vs p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.start {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#Reset button {
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  outline: none;
+  font-size: 0.8rem;
+  color: white;
+  background-color: black;
+  border: none;
+}
+
+#Reset button:hover {
+  background-color: #424242;
 }

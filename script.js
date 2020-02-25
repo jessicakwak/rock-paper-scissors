@@ -86,8 +86,8 @@ const displayScore = (hand, opponent) => {
       : outcome == 1
       ? "Win!" + winFace
       : "Lose" + loseFace;
-  myScore = outcome == 1 ? myScore + 1 : myScore;
-  yourScore = outcome == -1 ? yourScore + 1 : yourScore;
+  myScore += outcome;
+  yourScore -= outcome;
   document.querySelector("#outcome").innerHTML = message;
   document.querySelector("#myScore").classList.remove("hidden");
   document.querySelector(

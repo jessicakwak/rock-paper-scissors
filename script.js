@@ -20,7 +20,7 @@ const play = hand => {
 
 //function to randomly generate opponent hand
 const opponentHand = () => {
-  let rn = (Math.random() * 2 + 1).toFixed(0);
+  let rn = Number((Math.random() * 2 + 1).toFixed(0));
   return rn == 1 ? "paper" : rn == 2 ? "rock" : "scissors";
 };
 
